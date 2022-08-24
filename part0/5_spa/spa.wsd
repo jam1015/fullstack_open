@@ -20,6 +20,4 @@ end note
 browser->server: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
 server-->browser: for some reason, html that includes link to `course stats`
 
-note over browser:
-browser handles reloading with the post request from spa.js
 end note

@@ -1,5 +1,5 @@
 browser->server: HTTP POST: https://studies.cs.helsinki.fi/exampleapp/new_note
-
+server-->browser: 302: found /exampleapp/notes
 browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes 
 server-->browser: html code
 browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
@@ -11,8 +11,7 @@ browser starts executing js-code
 that requests JSON data from server 
 end note
 
-browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
-server-->browser: [{ content: "all the example notes", date: "2019-05-23" }, ...]
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json server-->browser: [{ content: "all the example notes", date: "2019-05-23" }, ...]
 
 note over browser:
 browser executes the event handler

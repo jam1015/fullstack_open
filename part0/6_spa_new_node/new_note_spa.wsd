@@ -1,34 +1,16 @@
-browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
-server-->browser: html code
-browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
-server-->browser: main.css
-browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
-server-->browser: spa.js
-note over browser:
-browser starts executing js-code
-that requests JSON data from server 
-end note
-
-browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
-server-->browser: [{ content: "all the example notes", date: "2019-05-23" }, ...]
-
-note over browser:
-browser executes the event handler
-that renders notes to display
-end note
-
-browser->server: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
-server-->browser: for some reason, html that includes link to `course stats`
-
 note over browser:
 user submits note
+end note
+
+note over browser:
+browser uses javascript to redraw the notes, and send data to the server.
 end note
 
 browser->server: HTTP POST: http://studies.cs.helsinki.fi/exampleappo/new_node_spa, JSON with contents and dates.
 
 
-
 server-->browser: 201: created
 
 note over browser:
-browser handles reloading with the post request from spa.
+browser adds the new note to the existing notes without retrieving the whole page again from the server
+end note
